@@ -165,8 +165,3 @@ plt.scatter(centers[:, 0], centers[:, 1], s=300, c='black', marker='+')
 plt.title('Clustering')
 plt.show()
 
-#%% Melihat nilai silhouette score
-score2 = silhouette_score(nmpy, labels)
-print("Silhouette Score: ", score2)
-
-# %%
