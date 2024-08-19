@@ -152,16 +152,4 @@ plt.show()
 score2 = silhouette_score(X1, labels2)
 print("Silhouette Score: ", score2)
 
-#%% Membangun FCM
-nmpy = df.drop(columns=['country','continent','year','population']).values
-model = FCM(n_clusters=3) # type: ignore
-model.fit(nmpy)
-centers = model.centers
-labels = model.predict(nmpy)
-plt.scatter(nmpy[labels == 0, 0], nmpy[labels == 0, 1], s=30, c='r', alpha=0.4)
-plt.scatter(nmpy[labels == 1, 0], nmpy[labels == 1, 1], s=30, c='b', alpha=0.4)
-plt.scatter(nmpy[labels == 2, 0], nmpy[labels == 2, 1], s=30, c='g', alpha=0.4)
-plt.scatter(centers[:, 0], centers[:, 1], s=300, c='black', marker='+')
-plt.title('Clustering')
-plt.show()
 
